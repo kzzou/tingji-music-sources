@@ -1,6 +1,9 @@
 name: Refresh subscription
 
 on:
+  schedule:
+    - cron: '0 2 * * *'
+      timezone: Asia/Shanghai
   workflow_dispatch:
 
 permissions: {}
@@ -68,7 +71,7 @@ jobs:
 
   publish:
     needs: validate
-    if: needs.validate.outputs.ready == 'true'
+    if: needs.validate.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -78,18 +81,26 @@ jobs:
         with:
           persist-credentials: false
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        if: needs.validate.outputs.ready == 'true'
         with:
           name: validated-subscription
           path: candidate
       - name: Validate and promote immutable artifact
+        if: needs.validate.outputs.ready == 'true'
         run: node scripts/promote.cjs candidate .
+      - name: Record completed check
+        env:
+          VALIDATED: ${{ needs.validate.outputs.ready }}
+        run: |
+          node -e 'require("node:fs").writeFileSync("last-check.json", JSON.stringify({checkedAt:new Date().toISOString(),runId:process.env.GITHUB_RUN_ID,status:process.env.VALIDATED==="true"?"validated":"no-candidate-passed"},null,2)+"\n")'
       - name: Commit and publish
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name 'tingji-source-bot'
           git config user.email 'tingji-source-bot@users.noreply.github.com'
-          git add -- manifest.json sources/
+          git add -- last-check.json
+          if [ -f manifest.json ]; then git add -- manifest.json sources/; fi
           if [ -f previous-manifest.json ]; then git add -- previous-manifest.json; fi
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'chore: publish verified music subscription'

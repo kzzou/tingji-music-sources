@@ -1,5 +1,7 @@
 # Codex 定时任务正文
 
+当前已采用 GitHub 云端每天北京时间 02:00 自动执行，无需创建此任务。下面仅保留为切换回 Codex 调度的备用内容；切换前请先移除 GitHub workflow 的 schedule，避免重复执行。
+
 名称：听己每日音源更新
 
 日程：每天 02:00，时区 **Asia/Shanghai**。不要使用电脑当前的 America/Los_Angeles 时区代替。
