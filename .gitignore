@@ -1,0 +1,4 @@
+/output/
+/candidate/
+/node_modules/
+*.log

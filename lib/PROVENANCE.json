@@ -1,0 +1,32 @@
+{
+  "generator": {
+    "origin": "Tingji application src/utils/sourceGenerator/{index,runtimeTemplate}.ts",
+    "changes": [
+      "Compiled TypeScript to dependency-free CommonJS",
+      "Added per-provider verifiedCapabilities allowlist; unknown platform/qualities are never advertised"
+    ]
+  },
+  "preload": {
+    "repository": "https://github.com/lyswhut/lx-music-mobile",
+    "path": "android/app/src/main/assets/script/user-api-preload.js",
+    "license": "Apache-2.0",
+    "sha256": "a1b153b626feb6e319b55fa30bd41de4fb47bbaf7d7d8cbbf1209ff81e34636e",
+    "changes": "None; exact application preload"
+  },
+  "probe": {
+    "origin": "Tingji source compatibility diagnostic harness",
+    "changes": [
+      "CI-only execution",
+      "Public network address restrictions",
+      "128k requirement",
+      "Token-free child environment"
+    ]
+  },
+  "fixture": {
+    "source": "Kugou public search result metadata",
+    "track": "不死鸟 — 霍尊",
+    "platform": "kg",
+    "audioId": "84695837",
+    "containsAudio": false
+  }
+}

@@ -1,0 +1,97 @@
+name: Refresh subscription
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: subscription-publication
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    outputs:
+      ready: ${{ steps.result.outputs.ready }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Regression tests
+        run: node --test tests/*.test.cjs
+      - name: Discover and validate without publishing credentials
+        shell: bash
+        run: |
+          mkdir -p output
+          marker="$(cat /proc/sys/kernel/random/uuid)"
+          echo "::stop-commands::$marker"
+          set +e
+          docker run --rm --init --read-only --cap-drop=ALL \
+            --security-opt=no-new-privileges --pids-limit=96 --memory=768m --cpus=2 \
+            --user "$(id -u):$(id -g)" \
+            --tmpfs /tmp:rw,nosuid,nodev,size=128m,mode=1777 \
+            --mount "type=bind,source=$GITHUB_WORKSPACE,target=/work,readonly" \
+            --mount "type=bind,source=$GITHUB_WORKSPACE/output,target=/out" \
+            --workdir /work --env TINGJI_OUTPUT_DIR=/out \
+            node:22-bookworm-slim node scripts/refresh.cjs
+          result=$?
+          echo "::$marker::"
+          exit "$result"
+      - name: Check result
+        id: result
+        run: |
+          if [ -f output/manifest.json ]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'No candidate passed; the published subscription remains unchanged.'
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: steps.result.outputs.ready == 'true'
+        with:
+          name: validated-subscription
+          path: |
+            output/manifest.json
+            output/sources/*.js
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: validation-diagnostics
+          path: output/diagnostics.json
+          if-no-files-found: ignore
+          retention-days: 3
+
+  publish:
+    needs: validate
+    if: needs.validate.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: validated-subscription
+          path: candidate
+      - name: Validate and promote immutable artifact
+        run: node scripts/promote.cjs candidate .
+      - name: Commit and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name 'tingji-source-bot'
+          git config user.email 'tingji-source-bot@users.noreply.github.com'
+          git add -- manifest.json sources/
+          if [ -f previous-manifest.json ]; then git add -- previous-manifest.json; fi
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: publish verified music subscription'
+          gh auth setup-git
+          git push origin HEAD:main

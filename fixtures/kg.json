@@ -1,0 +1,111 @@
+{
+  "kg": {
+    "modern": {
+      "id": "84695837_64A97CF5A13020E8B2475FD8C0B6BE93",
+      "name": "不死鸟",
+      "singer": "霍尊",
+      "source": "kg",
+      "interval": "04:25",
+      "meta": {
+        "songId": 84695837,
+        "albumName": "归一",
+        "picUrl": null,
+        "qualitys": [
+          {
+            "type": "128k",
+            "size": "4253760",
+            "hash": "64A97CF5A13020E8B2475FD8C0B6BE93"
+          },
+          {
+            "type": "320k",
+            "size": "10633711",
+            "hash": "05DCCF0D38FD7F62CDCA2C5B16C66F6A"
+          },
+          {
+            "type": "flac",
+            "size": "30461666",
+            "hash": "F8BA0C029F8134B56577785F3824D153"
+          }
+        ],
+        "_qualitys": {
+          "128k": {
+            "size": "4253760",
+            "hash": "64A97CF5A13020E8B2475FD8C0B6BE93"
+          },
+          "320k": {
+            "size": "10633711",
+            "hash": "05DCCF0D38FD7F62CDCA2C5B16C66F6A"
+          },
+          "flac": {
+            "size": "30461666",
+            "hash": "F8BA0C029F8134B56577785F3824D153"
+          }
+        },
+        "albumId": "39743917",
+        "hash": "64A97CF5A13020E8B2475FD8C0B6BE93"
+      }
+    },
+    "legacy": {
+      "singer": "霍尊",
+      "name": "不死鸟",
+      "albumName": "归一",
+      "albumId": "39743917",
+      "songmid": 84695837,
+      "source": "kg",
+      "interval": "04:25",
+      "_interval": 265,
+      "img": null,
+      "lrc": null,
+      "otherSource": null,
+      "hash": "64A97CF5A13020E8B2475FD8C0B6BE93",
+      "types": [
+        {
+          "type": "128k",
+          "size": "4253760",
+          "hash": "64A97CF5A13020E8B2475FD8C0B6BE93"
+        },
+        {
+          "type": "320k",
+          "size": "10633711",
+          "hash": "05DCCF0D38FD7F62CDCA2C5B16C66F6A"
+        },
+        {
+          "type": "flac",
+          "size": "30461666",
+          "hash": "F8BA0C029F8134B56577785F3824D153"
+        }
+      ],
+      "_types": {
+        "128k": {
+          "size": "4253760",
+          "hash": "64A97CF5A13020E8B2475FD8C0B6BE93"
+        },
+        "320k": {
+          "size": "10633711",
+          "hash": "05DCCF0D38FD7F62CDCA2C5B16C66F6A"
+        },
+        "flac": {
+          "size": "30461666",
+          "hash": "F8BA0C029F8134B56577785F3824D153"
+        }
+      },
+      "typeUrl": {}
+    }
+  },
+  "provenance": {
+    "query": "不死鸟 霍尊",
+    "provider": "songsearch.kugou.com",
+    "time": "2026-10-31T02:40:32.476Z",
+    "calls": [
+      {
+        "host": "songsearch.kugou.com",
+        "started": "2026-10-31T02:40:13.667Z"
+      },
+      {
+        "host": "songsearch.kugou.com",
+        "started": "2026-10-31T02:40:28.636Z",
+        "status": 200
+      }
+    ]
+  }
+}
