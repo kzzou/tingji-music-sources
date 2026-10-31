@@ -3,7 +3,8 @@
     "origin": "Tingji application src/utils/sourceGenerator/{index,runtimeTemplate}.ts",
     "changes": [
       "Compiled TypeScript to dependency-free CommonJS",
-      "Added per-provider verifiedCapabilities allowlist; unknown platform/qualities are never advertised"
+      "Added per-provider verifiedCapabilities allowlist; unknown platform/qualities are never advertised",
+      "Synced allocation-free UTF8 byte counting from the application memory regression fix"
     ]
   },
   "preload": {

@@ -12,6 +12,21 @@ const source = `/*!\n * @name Author source\n * @author Original author\n * @ver
 const verification = () => ({ init: { status: true }, quality: '128k', resolves: [{ requestKey: 'sample', status: true }], media: { status: 206, bytes: 8192, audioHeader: true } });
 const candidate = (changes = {}) => ({ repository: 'author/music', path: 'latest.js', commit: 'a'.repeat(40), rawCode: source, updatedAt: '2026-10-30T00:00:00Z', verification: verification(), ...changes });
 
+test('counts large UTF8 source bytes without allocating full-script regexp results', () => {
+  const { utf8Size } = require('../lib/generator.cjs');
+  const text = 'music 中文 😀\n'.repeat(180000);
+  const actual = vm.runInNewContext(`
+    const originalExec = RegExp.prototype.exec;
+    RegExp.prototype.exec = function(value) {
+      if (value.length > 65536) throw Error('mobile regexp input limit');
+      return originalExec.call(this, value);
+    };
+    (${utf8Size.toString()})(text);
+  `, { text }, { timeout: 2000 });
+  assert.equal(actual, Buffer.byteLength(text));
+  assert.throws(() => utf8Size('\uD800'), URIError);
+});
+
 test('deduplicates content across repositories before limiting to ten by file update date', () => {
   const values = Array.from({ length: 13 }, (_, i) => candidate({ path: `${i}/latest.js`, rawCode: `${source}\n// ${i}`, updatedAt: new Date(2026, 9, i + 1).toISOString() }));
   values.push({ ...values[12], repository: 'fork/music', updatedAt: '2026-10-30T00:00:00Z' });
