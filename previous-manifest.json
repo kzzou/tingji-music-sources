@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "version": "20261031T034030026Z-39251a45c68e",
+  "generatedAt": "2026-10-31T03:40:30.026Z",
+  "source": {
+    "path": "sources/39251a45c68ef5cafee5f90e7fe9dd03aaeb7abada34aa7adab0e50e7b5651c4.js",
+    "sha256": "39251a45c68ef5cafee5f90e7fe9dd03aaeb7abada34aa7adab0e50e7b5651c4",
+    "sha1": "0b3dcc5e9590bf8e29e4cc0596e9589e370e0512",
+    "bytes": 1421943
+  },
+  "capabilities": {
+    "kg": [
+      "128k"
+    ]
+  },
+  "verification": {
+    "platform": "kg",
+    "quality": "128k",
+    "sample": "不死鸟 — 霍尊",
+    "check": "musicUrl + HTTP GET audio magic",
+    "testedAt": "2026-10-31T03:40:30.026Z"
+  },
+  "upstreams": [
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "000578ddca4a676012cf735abdc3489efdc67c74",
+      "path": "fish/latest.js",
+      "sha256": "a711e152c4f28c32fd46b38839a70f476e0b669905773a90e2ce63246136af47",
+      "updatedAt": "2026-10-29T04:57:19Z"
+    },
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "000578ddca4a676012cf735abdc3489efdc67c74",
+      "path": "lx/latest.js",
+      "sha256": "79a5c4703e060eaff6f8ffaac05d2fadf5e22b7729f6fe151d1cca2fa3935171",
+      "updatedAt": "2026-10-29T04:57:19Z"
+    }
+  ]
+}
