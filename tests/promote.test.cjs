@@ -47,3 +47,25 @@ test('rejects traversal and unknown capabilities', t => {
   f.manifest.capabilities = { kg: ['premium'] }; f.write()
   assert.throws(() => inspect(f.candidate), /capabilities/)
 })
+test('allows a larger multi-platform bundle while enforcing the mobile provider limit', t => {
+  const f = fixture(t)
+  f.manifest.capabilities = { kg: ['128k'], tx: ['128k'], kw: ['128k'] }
+  f.manifest.upstreams = Array.from({ length: 24 }, (_, index) => ({ ...f.manifest.upstreams[0], path: `provider-${index}.js` }))
+  f.write()
+  assert.equal(inspect(f.candidate).manifest.upstreams.length, 24)
+  f.manifest.upstreams.push({ ...f.manifest.upstreams[0], path: 'overflow.js' }); f.write()
+  assert.throws(() => inspect(f.candidate), /provenance/)
+})
+test('discovery and publisher agree on the upstream path boundary', t => {
+  const { sourcePaths } = require('../lib/discovery.cjs')
+  const f = fixture(t)
+  const accepted = 'a/'.repeat(248) + 'b.js'
+  const rejected = 'a/'.repeat(248) + 'bb.js'
+  const entry = path => ({ path, type: 'blob', mode: '100644', size: 100 })
+  assert.equal(accepted.length, 500)
+  assert.deepEqual(sourcePaths([entry(accepted), entry(rejected)]).map(item => item.path), [accepted])
+  f.manifest.upstreams[0].path = accepted; f.write()
+  assert.equal(inspect(f.candidate).manifest.upstreams[0].path, accepted)
+  f.manifest.upstreams[0].path = rejected; f.write()
+  assert.throws(() => inspect(f.candidate), /provenance/)
+})

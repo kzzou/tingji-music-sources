@@ -36,7 +36,7 @@ function inspect(root) {
   new vm.Script(script.toString('utf8'), { filename: 'subscription.js' }) // Compile only.
   const caps = manifest.capabilities
   if (!caps || typeof caps !== 'object' || Array.isArray(caps) || !Object.keys(caps).length || Object.keys(caps).some(key => !allowed.has(key) || !Array.isArray(caps[key]) || !caps[key].length || caps[key].some(value => !qualities.has(value)))) throw new Error('Invalid verified capabilities')
-  if (!Array.isArray(manifest.upstreams) || manifest.upstreams.length < 1 || manifest.upstreams.length > 10) throw new Error('Invalid provenance')
+  if (!Array.isArray(manifest.upstreams) || manifest.upstreams.length < 1 || manifest.upstreams.length > 24) throw new Error('Invalid provenance')
   for (const upstream of manifest.upstreams) {
     if (!/^[\w.-]+\/[\w.-]+$/.test(upstream.repository) || !/^[a-f0-9]{40}$/.test(upstream.commit) || !/^[a-f0-9]{64}$/.test(upstream.sha256) || typeof upstream.path !== 'string' || upstream.path.length > 500 || /[\x00-\x1f]/.test(upstream.path)) throw new Error('Invalid upstream provenance')
   }

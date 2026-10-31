@@ -15,7 +15,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 55
     permissions:
       contents: read
     outputs:
@@ -26,7 +26,13 @@ jobs:
           persist-credentials: false
       - name: Regression tests
         run: node --test tests/*.test.cjs
-      - name: Discover and validate without publishing credentials
+      - name: Discover public sources with read-only API access
+        timeout-minutes: 10
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/discover.cjs
+      - name: Validate downloaded sources without credentials
+        timeout-minutes: 45
         shell: bash
         run: |
           mkdir -p output
@@ -34,13 +40,16 @@ jobs:
           echo "::stop-commands::$marker"
           set +e
           docker run --rm --init --read-only --cap-drop=ALL \
-            --security-opt=no-new-privileges --pids-limit=96 --memory=768m --cpus=2 \
+            --security-opt=no-new-privileges --pids-limit=128 --memory=1536m --cpus=3 \
             --user "$(id -u):$(id -g)" \
-            --tmpfs /tmp:rw,nosuid,nodev,size=128m,mode=1777 \
+            --tmpfs /tmp:rw,nosuid,nodev,size=256m,mode=1777 \
             --mount "type=bind,source=$GITHUB_WORKSPACE,target=/work,readonly" \
+            --mount "type=bind,source=$GITHUB_WORKSPACE/discovery,target=/input,readonly" \
             --mount "type=bind,source=$GITHUB_WORKSPACE/output,target=/out" \
-            --workdir /work --env TINGJI_OUTPUT_DIR=/out --env CI=true --env GITHUB_ACTIONS=true \
-            node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da node scripts/refresh.cjs
+            --workdir /work --env TINGJI_OUTPUT_DIR=/out --env TINGJI_CATALOG_DIR=/input \
+            --env TINGJI_FIXTURE_PATH=/out/fixtures/platforms.json --env CI=true --env GITHUB_ACTIONS=true \
+            node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da \
+            sh -c 'node scripts/refresh-fixtures.cjs && node scripts/refresh.cjs'
           result=$?
           echo "::$marker::"
           exit "$result"
@@ -65,7 +74,10 @@ jobs:
         if: always()
         with:
           name: validation-diagnostics
-          path: output/diagnostics.json
+          path: |
+            output/diagnostics.json
+            output/fixture-status.json
+            discovery/catalog.json
           if-no-files-found: ignore
           retention-days: 3
 

@@ -1,0 +1,12 @@
+{
+  "repositories": [
+    { "repository": "pdone/lx-music-source", "reason": "Existing collection and previously tested providers" },
+    { "repository": "Huibq/keep-alive", "reason": "Public LX source candidate found in GitHub search" },
+    { "repository": "Macrohard0001/lx-ikun-music-sources", "reason": "Public LX source candidate found in GitHub search" },
+    { "repository": "cdyUuu/lx-music-xinghai-source", "reason": "Public Xinghai source candidate found in GitHub search" },
+    { "repository": "hwxlikemi/lxs", "reason": "Public LX source candidate found in GitHub search" },
+    { "repository": "fengshgx/lxs", "reason": "Public LX source candidate found in GitHub search" },
+    { "repository": "cc2415/lx-custom-music-source", "reason": "Public custom LX source candidate found in GitHub search" },
+    { "repository": "guoyue2010/lxmusic-", "reason": "Public LX source candidate found in GitHub search" }
+  ]
+}

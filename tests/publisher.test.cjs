@@ -5,7 +5,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const vm = require('node:vm');
-const { digest, selectNewestUnique, audioVerified, sanitizeDiagnostics, compileVerified, writeOutput } = require('../lib/publisher.cjs');
+const { digest, selectNewestUnique, audioVerified, normalizeVerifiedReports, sanitizeDiagnostics, preliminaryBundle, compileVerified, writeOutput } = require('../lib/publisher.cjs');
 const { sourcePaths } = require('../lib/discovery.cjs');
 const { publicAddress, safeURL } = require('../lib/network.cjs');
 const source = `/*!\n * @name Author source\n * @author Original author\n * @version 2\n */\nlx.on(lx.EVENT_NAMES.request, async () => 'https://example.com/song.mp3');\nlx.send(lx.EVENT_NAMES.inited, {sources:{kg:{type:'music',actions:['musicUrl'],qualitys:['128k','320k']},tx:{type:'music',actions:['musicUrl'],qualitys:['128k']}}});`;
@@ -27,14 +27,14 @@ test('counts large UTF8 source bytes without allocating full-script regexp resul
   assert.throws(() => utf8Size('\uD800'), URIError);
 });
 
-test('deduplicates content across repositories before limiting to ten by file update date', () => {
-  const values = Array.from({ length: 13 }, (_, i) => candidate({ path: `${i}/latest.js`, rawCode: `${source}\n// ${i}`, updatedAt: new Date(2026, 9, i + 1).toISOString() }));
-  values.push({ ...values[12], repository: 'fork/music', updatedAt: '2026-10-30T00:00:00Z' });
+test('deduplicates content across repositories before limiting to thirty by file update date', () => {
+  const values = Array.from({ length: 35 }, (_, i) => candidate({ path: `${i}/latest.js`, rawCode: `${source}\n// ${i}`, updatedAt: new Date(2026, 8, i + 1).toISOString() }));
+  values.push({ ...values[34], repository: 'fork/music', updatedAt: '2026-10-30T00:00:00Z' });
   const selected = selectNewestUnique(values);
-  assert.equal(selected.length, 10);
+  assert.equal(selected.length, 30);
   assert.equal(selected[0].repository, 'fork/music');
-  assert.equal(new Set(selected.map(item => item.sha256)).size, 10);
-  assert.ok(Date.parse(selected[1].updatedAt) > Date.parse(selected[9].updatedAt));
+  assert.equal(new Set(selected.map(item => item.sha256)).size, 30);
+  assert.ok(Date.parse(selected[1].updatedAt) > Date.parse(selected[29].updatedAt));
 });
 
 test('requires successful resolver AND HTTP audio prefix, never init alone', () => {
@@ -97,7 +97,7 @@ test('no-pass output removes only pending manifest and preserves immutable sourc
 test('discovery prefers latest.js and excludes oversized files/symlinks/build directories', () => {
   const file = path => ({ path, type: 'blob', mode: '100644', size: 1024 });
   assert.deepEqual(sourcePaths([file('source/latest.js'), file('source/1.0.js'), file('node_modules/x/latest.js'), { ...file('huge/latest.js'), size: 2e6 }, { ...file('link/latest.js'), mode: '120000' }]).map(item => item.path), ['source/latest.js']);
-  assert.deepEqual(sourcePaths([file('source.js'), file('src/util.js')]).map(item => item.path), ['source.js']);
+  assert.deepEqual(sourcePaths([file('source.js'), file('src/util.js')]).map(item => item.path), ['source.js', 'src/util.js']);
 });
 
 test('equal-timestamp candidates prefer previously compatible source families, never over newer files', () => {
