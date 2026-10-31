@@ -36,8 +36,8 @@ jobs:
             --tmpfs /tmp:rw,nosuid,nodev,size=128m,mode=1777 \
             --mount "type=bind,source=$GITHUB_WORKSPACE,target=/work,readonly" \
             --mount "type=bind,source=$GITHUB_WORKSPACE/output,target=/out" \
-            --workdir /work --env TINGJI_OUTPUT_DIR=/out \
-            node:22-bookworm-slim node scripts/refresh.cjs
+            --workdir /work --env TINGJI_OUTPUT_DIR=/out --env CI=true --env GITHUB_ACTIONS=true \
+            node:22-bookworm-slim@sha256:4b150b48b4116e2a22f2c39cc27025fbf4f153e2078fd3b14d159fdb5c7279da node scripts/refresh.cjs
           result=$?
           echo "::$marker::"
           exit "$result"

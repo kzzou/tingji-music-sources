@@ -1,0 +1,8 @@
+* text=auto
+*.cjs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+# These bytes are hashed or preserve the exact upstream preload.
+lib/user-api-preload.js -text
+sources/*.js -text
