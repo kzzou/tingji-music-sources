@@ -19,7 +19,8 @@
       "CI-only execution",
       "Public network address restrictions",
       "128k requirement",
-      "Token-free child environment"
+      "Token-free child environment",
+      "HTTP/TLS sockets pinned to vetted public DNS answers, original Host/SNI retained, redirects revalidated"
     ]
   },
   "fixture": {

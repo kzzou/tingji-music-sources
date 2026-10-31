@@ -99,6 +99,6 @@ test('abort signal also stops waiting for DNS before any socket exists', async (
 });
 
 test('rejects CGNAT, documentation, transition, benchmark, multicast and IPv6 mapped private addresses', () => {
-  for (const address of ['100.64.0.1', '100.127.255.254', '100.100.100.200', '192.0.2.1', '192.88.99.1', '198.18.0.1', '198.19.255.255', '198.51.100.1', '203.0.113.1', '224.0.0.1', '255.255.255.255', '::ffff:127.0.0.1', '::ffff:c0a8:1', '2001:db8::1', '2001:2::1', '2002:c0a8:1::1', 'ff02::1']) assert.equal(publicAddress(address), false, address);
+  for (const address of ['100.64.0.1', '100.127.255.254', '100.100.100.200', '192.0.2.1', '192.88.99.1', '198.18.0.1', '198.19.255.255', '198.51.100.1', '203.0.113.1', '224.0.0.1', '255.255.255.255', '::ffff:127.0.0.1', '::ffff:c0a8:1', '2001:db8::1', '2001:0db8:0:0:0:0:0:1', '2001:2::1', '2002:c0a8:1::1', 'ff02::1']) assert.equal(publicAddress(address), false, address);
   for (const address of ['8.8.8.8', '1.1.1.1', '2606:4700:4700::1111', '2001:4860:4860::8888']) assert.equal(publicAddress(address), true, address);
 });
