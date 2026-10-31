@@ -4,7 +4,8 @@
     "changes": [
       "Compiled TypeScript to dependency-free CommonJS",
       "Added per-provider verifiedCapabilities allowlist; unknown platform/qualities are never advertised",
-      "Synced allocation-free UTF8 byte counting from the application memory regression fix"
+      "Synced allocation-free UTF8 byte counting from the application memory regression fix",
+      "Added per-platform verified-sample priorities and target-song coverage selection"
     ]
   },
   "preload": {
