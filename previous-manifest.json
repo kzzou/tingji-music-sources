@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261104T231123071Z-30aa27100dcc",
-  "generatedAt": "2026-11-04T23:11:23.071Z",
+  "version": "20261105T231529239Z-1b24ffed3758",
+  "generatedAt": "2026-11-05T23:15:29.239Z",
   "source": {
-    "path": "sources/30aa27100dcc098b98fcdbb99fbedde4cf07c1ca2fa83d7c7cc5ca1b74ede193.js",
-    "sha256": "30aa27100dcc098b98fcdbb99fbedde4cf07c1ca2fa83d7c7cc5ca1b74ede193",
-    "sha1": "3b26afde1609ad9fe2fbad3e27c0c1e49e6cc826",
-    "bytes": 2702455
+    "path": "sources/1b24ffed3758dfa48011b41af94a123b90f0bd402d47f61bf5e04816c42a1f2f.js",
+    "sha256": "1b24ffed3758dfa48011b41af94a123b90f0bd402d47f61bf5e04816c42a1f2f",
+    "sha1": "feb242d7d75af68cff25dc5fd824317ce7122b57",
+    "bytes": 3419832
   },
   "capabilities": {
     "kg": [
@@ -100,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-04T23:11:23.071Z"
+    "testedAt": "2026-11-05T23:15:29.239Z"
   },
   "upstreams": [
     {
@@ -146,6 +146,13 @@
       "updatedAt": "2024-04-15T08:14:58Z"
     },
     {
+      "repository": "pdone/lx-music-source",
+      "commit": "000578ddca4a676012cf735abdc3489efdc67c74",
+      "path": "hyw/latest.js",
+      "sha256": "0f48bdab4205e4423397f970b926565085a5af4f3b8a8a19f4cdc0e755647cd5",
+      "updatedAt": "2026-10-29T04:57:19Z"
+    },
+    {
       "repository": "cdyUuu/lx-music-xinghai-source",
       "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
       "path": "xinghai-music-sourcev2.3.12.js",
@@ -153,18 +160,18 @@
       "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
-      "repository": "moxi5445/lx-music-cloud",
-      "commit": "147dd277d689218dd7afc2eded1f54db577303bc",
-      "path": "members/lx-music-source-260925-43bec2.js",
-      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
-      "updatedAt": "2026-11-04T05:10:59Z"
-    },
-    {
       "repository": "ShaneLee-9/lx-music-source-merge",
       "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
       "path": "checked/HelloWorld音源(中秋快乐).js",
       "sha256": "32ff5f7b44c1d7d038cb548cb6fac0349befb538bdae26fb658684115e823427",
       "updatedAt": "2026-10-31T08:26:52Z"
+    },
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "000578ddca4a676012cf735abdc3489efdc67c74",
+      "path": "helloworld/latest.js",
+      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
+      "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
       "repository": "hwxlikemi/lxs",
@@ -175,7 +182,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "e13f195a0d0605b0423d94e8adee58c9a0faccdc",
+      "commit": "7b0cf28f5882d1cba18e91038dd808803924f9c5",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -189,17 +196,24 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "e13f195a0d0605b0423d94e8adee58c9a0faccdc",
+      "commit": "7b0cf28f5882d1cba18e91038dd808803924f9c5",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
     },
     {
-      "repository": "pdone/lx-music-source",
-      "commit": "000578ddca4a676012cf735abdc3489efdc67c74",
-      "path": "lx/latest.js",
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
+      "path": "checked/Hei Music v2.2.1-fix.js",
+      "sha256": "78d3cad4f64913358112edd71c4d32842048135b9105c36e76842a126a180ef2",
+      "updatedAt": "2026-10-31T08:26:52Z"
+    },
+    {
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
+      "path": "checked/独家音源-v7.js",
       "sha256": "79a5c4703e060eaff6f8ffaac05d2fadf5e22b7729f6fe151d1cca2fa3935171",
-      "updatedAt": "2026-10-29T04:57:19Z"
+      "updatedAt": "2026-10-31T08:26:52Z"
     },
     {
       "repository": "hwxlikemi/lxs",
@@ -216,18 +230,25 @@
       "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
-      "repository": "ShaneLee-9/lx-music-source-merge",
-      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
-      "path": "checked/(推荐)裤佬SVIP音源（酷狗挂了）.js",
-      "sha256": "7ba2ca2c4b5ec2b0931f1a4f7f542a19e844f40f2765b661d0aee3b38e63ad4a",
-      "updatedAt": "2026-10-08T07:53:23Z"
-    },
-    {
       "repository": "guoyue2010/lxmusic-",
       "commit": "4b6ddafad26fed0b6cbe029a3cc8dcd7fd7e8cd7",
       "path": "V260907/lx-玉宁熙V1.2.2.js",
       "sha256": "9ddcc32f55ba1981166f16bf55c03c43165b098932208a5fb4c9c64192650f0c",
       "updatedAt": "2026-09-07T06:57:38Z"
+    },
+    {
+      "repository": "6m7924wnwt-oss/wow-origin",
+      "commit": "732d6a3498f52730a0f322d2a2ca49d1ba35f5d7",
+      "path": "public/aya-source.js",
+      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
+      "updatedAt": "2026-11-05T20:52:00Z"
+    },
+    {
+      "repository": "6m7924wnwt-oss/wow-origin",
+      "commit": "732d6a3498f52730a0f322d2a2ca49d1ba35f5d7",
+      "path": "public/five-source-v16.js",
+      "sha256": "58fd208e6f8df9dd40c571b2d33e926b74bee88328f6abe1e0e9d5a864ca1fd1",
+      "updatedAt": "2026-11-05T20:04:36Z"
     },
     {
       "repository": "pdone/lx-music-source",
