@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261105T231529239Z-1b24ffed3758",
-  "generatedAt": "2026-11-05T23:15:29.239Z",
+  "version": "20261106T224204252Z-820c26651334",
+  "generatedAt": "2026-11-06T22:42:04.252Z",
   "source": {
-    "path": "sources/1b24ffed3758dfa48011b41af94a123b90f0bd402d47f61bf5e04816c42a1f2f.js",
-    "sha256": "1b24ffed3758dfa48011b41af94a123b90f0bd402d47f61bf5e04816c42a1f2f",
-    "sha1": "feb242d7d75af68cff25dc5fd824317ce7122b57",
-    "bytes": 3419832
+    "path": "sources/820c2665133457d3206b4d56238660c88074de4131dff42ad0c1d6a3e07cf320.js",
+    "sha256": "820c2665133457d3206b4d56238660c88074de4131dff42ad0c1d6a3e07cf320",
+    "sha1": "fa3bb5929d74c76115bc2efc1f76f6fede3987fb",
+    "bytes": 3419912
   },
   "capabilities": {
     "kg": [
@@ -100,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-05T23:15:29.239Z"
+    "testedAt": "2026-11-06T22:42:04.252Z"
   },
   "upstreams": [
     {
@@ -182,7 +182,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "7b0cf28f5882d1cba18e91038dd808803924f9c5",
+      "commit": "d9e6994886887497e30945e4fe1ba29302931295",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -196,7 +196,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "7b0cf28f5882d1cba18e91038dd808803924f9c5",
+      "commit": "d9e6994886887497e30945e4fe1ba29302931295",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261106T224204252Z-820c26651334",
-  "generatedAt": "2026-11-06T22:42:04.252Z",
+  "version": "20261107T212527024Z-664131b8dab9",
+  "generatedAt": "2026-11-07T21:25:27.024Z",
   "source": {
-    "path": "sources/820c2665133457d3206b4d56238660c88074de4131dff42ad0c1d6a3e07cf320.js",
-    "sha256": "820c2665133457d3206b4d56238660c88074de4131dff42ad0c1d6a3e07cf320",
-    "sha1": "fa3bb5929d74c76115bc2efc1f76f6fede3987fb",
-    "bytes": 3419912
+    "path": "sources/664131b8dab93254253077baefad4fa35864dc6640256ffabba88e015483598d.js",
+    "sha256": "664131b8dab93254253077baefad4fa35864dc6640256ffabba88e015483598d",
+    "sha1": "dc242addf1146a9925daf153c252658950b1af63",
+    "bytes": 3420016
   },
   "capabilities": {
     "kg": [
@@ -100,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-06T22:42:04.252Z"
+    "testedAt": "2026-11-07T21:25:27.024Z"
   },
   "upstreams": [
     {
@@ -182,7 +182,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "d9e6994886887497e30945e4fe1ba29302931295",
+      "commit": "eb4de2d208574711e82efcaa057598d158667693",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -196,7 +196,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "d9e6994886887497e30945e4fe1ba29302931295",
+      "commit": "eb4de2d208574711e82efcaa057598d158667693",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -238,14 +238,14 @@
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "732d6a3498f52730a0f322d2a2ca49d1ba35f5d7",
+      "commit": "8726ba7b8bc97505f0fe01c147e8d382d617b52a",
       "path": "public/aya-source.js",
       "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
       "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "732d6a3498f52730a0f322d2a2ca49d1ba35f5d7",
+      "commit": "8726ba7b8bc97505f0fe01c147e8d382d617b52a",
       "path": "public/five-source-v16.js",
       "sha256": "58fd208e6f8df9dd40c571b2d33e926b74bee88328f6abe1e0e9d5a864ca1fd1",
       "updatedAt": "2026-11-05T20:04:36Z"
