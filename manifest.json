@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261110T010931066Z-c38a7e3b98dc",
-  "generatedAt": "2026-11-10T01:09:31.066Z",
+  "version": "20261110T224846076Z-3609658aa30e",
+  "generatedAt": "2026-11-10T22:48:46.076Z",
   "source": {
-    "path": "sources/c38a7e3b98dc89e3a5d3c27ba6b4f2a11c71f911e4ccadb708b4a5777fd5364b.js",
-    "sha256": "c38a7e3b98dc89e3a5d3c27ba6b4f2a11c71f911e4ccadb708b4a5777fd5364b",
-    "sha1": "f1c13a4ff1a4e58f787f381432d9831e5fb8201f",
-    "bytes": 3377802
+    "path": "sources/3609658aa30e9c2d6d7b0b9e232231557e4e34dcaec1995847d97027ff6a1a03.js",
+    "sha256": "3609658aa30e9c2d6d7b0b9e232231557e4e34dcaec1995847d97027ff6a1a03",
+    "sha1": "10e1dc18d52442f782ee8781bee2fa0e8737b8ff",
+    "bytes": 3299356
   },
   "capabilities": {
     "kg": [
@@ -20,6 +20,9 @@
     ],
     "wy": [
       "128k"
+    ],
+    "mg": [
+      "128k"
     ]
   },
   "verification": {
@@ -27,7 +30,8 @@
       "kg",
       "tx",
       "kw",
-      "wy"
+      "wy",
+      "mg"
     ],
     "quality": "128k",
     "samples": [
@@ -68,6 +72,15 @@
         "requested": true
       },
       {
+        "platform": "mg",
+        "quality": "128k",
+        "name": "稻香",
+        "singer": "周杰伦",
+        "songId": "697066",
+        "index": 0,
+        "requested": false
+      },
+      {
         "platform": "kg",
         "quality": "128k",
         "name": "不死鸟",
@@ -87,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-10T01:09:31.066Z"
+    "testedAt": "2026-11-10T22:48:46.076Z"
   },
   "upstreams": [
     {
@@ -176,7 +189,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "5a287f26c8b8fb1d08cc2b5efc973a0528cde0fe",
+      "commit": "e88529e8552cceaacdc72ca1a11c51479cde3e07",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -190,10 +203,17 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "5a287f26c8b8fb1d08cc2b5efc973a0528cde0fe",
+      "commit": "e88529e8552cceaacdc72ca1a11c51479cde3e07",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
+    },
+    {
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
+      "path": "checked/Hei Music v2.2.1-fix.js",
+      "sha256": "78d3cad4f64913358112edd71c4d32842048135b9105c36e76842a126a180ef2",
+      "updatedAt": "2026-10-31T08:26:52Z"
     },
     {
       "repository": "ShaneLee-9/lx-music-source-merge",
@@ -208,13 +228,6 @@
       "path": "lx-玉宁熙.js",
       "sha256": "2a9ed0de34d0c19ebf4b225cde3d9cba28599c238c9502c49be2c411b805bfad",
       "updatedAt": "2026-05-02T07:51:47Z"
-    },
-    {
-      "repository": "ShaneLee-9/lx-music-source-merge",
-      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
-      "path": "checked/(推荐)裤佬SVIP音源（酷狗挂了）.js",
-      "sha256": "7ba2ca2c4b5ec2b0931f1a4f7f542a19e844f40f2765b661d0aee3b38e63ad4a",
-      "updatedAt": "2026-10-08T07:53:23Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
