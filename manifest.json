@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261108T214050101Z-40707e115b70",
-  "generatedAt": "2026-11-08T21:40:50.101Z",
+  "version": "20261110T010931066Z-c38a7e3b98dc",
+  "generatedAt": "2026-11-10T01:09:31.066Z",
   "source": {
-    "path": "sources/40707e115b702b43e0b6b0c0f10c573646ea019fab4de75e579d226819b2e272.js",
-    "sha256": "40707e115b702b43e0b6b0c0f10c573646ea019fab4de75e579d226819b2e272",
-    "sha1": "47f633af4ba413a878622bd0ca6622d3efc5c2f2",
-    "bytes": 3378041
+    "path": "sources/c38a7e3b98dc89e3a5d3c27ba6b4f2a11c71f911e4ccadb708b4a5777fd5364b.js",
+    "sha256": "c38a7e3b98dc89e3a5d3c27ba6b4f2a11c71f911e4ccadb708b4a5777fd5364b",
+    "sha1": "f1c13a4ff1a4e58f787f381432d9831e5fb8201f",
+    "bytes": 3377802
   },
   "capabilities": {
     "kg": [
@@ -20,9 +20,6 @@
     ],
     "wy": [
       "128k"
-    ],
-    "mg": [
-      "128k"
     ]
   },
   "verification": {
@@ -30,8 +27,7 @@
       "kg",
       "tx",
       "kw",
-      "wy",
-      "mg"
+      "wy"
     ],
     "quality": "128k",
     "samples": [
@@ -72,15 +68,6 @@
         "requested": true
       },
       {
-        "platform": "mg",
-        "quality": "128k",
-        "name": "稻香",
-        "singer": "周杰伦",
-        "songId": "697066",
-        "index": 0,
-        "requested": false
-      },
-      {
         "platform": "kg",
         "quality": "128k",
         "name": "不死鸟",
@@ -100,7 +87,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-08T21:40:50.101Z"
+    "testedAt": "2026-11-10T01:09:31.066Z"
   },
   "upstreams": [
     {
@@ -189,7 +176,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "1099a8bf02f8811ed5d02e79942e45ffaf84fbb3",
+      "commit": "5a287f26c8b8fb1d08cc2b5efc973a0528cde0fe",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -203,7 +190,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "1099a8bf02f8811ed5d02e79942e45ffaf84fbb3",
+      "commit": "5a287f26c8b8fb1d08cc2b5efc973a0528cde0fe",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -238,14 +225,14 @@
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "8726ba7b8bc97505f0fe01c147e8d382d617b52a",
+      "commit": "c6ebd72d2594cc24d63db923144f3bab6e5913b4",
       "path": "public/aya-source.js",
       "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
       "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "8726ba7b8bc97505f0fe01c147e8d382d617b52a",
+      "commit": "c6ebd72d2594cc24d63db923144f3bab6e5913b4",
       "path": "public/five-source-v16.js",
       "sha256": "58fd208e6f8df9dd40c571b2d33e926b74bee88328f6abe1e0e9d5a864ca1fd1",
       "updatedAt": "2026-11-05T20:04:36Z"
