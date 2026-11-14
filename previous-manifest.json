@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261112T231044954Z-2bf28338345c",
-  "generatedAt": "2026-11-12T23:10:44.954Z",
+  "version": "20261113T231343812Z-e67f67e1e5bb",
+  "generatedAt": "2026-11-13T23:13:43.812Z",
   "source": {
-    "path": "sources/2bf28338345c343161fc7843c7ec7b9de063ed37d7e40de06a4c128dd7e4ac08.js",
-    "sha256": "2bf28338345c343161fc7843c7ec7b9de063ed37d7e40de06a4c128dd7e4ac08",
-    "sha1": "9b118dd17b48cb3ac3736fbb99494e35818f5362",
-    "bytes": 3299044
+    "path": "sources/e67f67e1e5bbf37921dfe50b9988b047d4ab2cf688a897b931d2828fd5579a61.js",
+    "sha256": "e67f67e1e5bbf37921dfe50b9988b047d4ab2cf688a897b931d2828fd5579a61",
+    "sha1": "24bdd4b942ddeedcc1f9d454047e149171e0d17f",
+    "bytes": 3450748
   },
   "capabilities": {
     "kg": [
@@ -20,6 +20,9 @@
     ],
     "wy": [
       "128k"
+    ],
+    "mg": [
+      "128k"
     ]
   },
   "verification": {
@@ -27,7 +30,8 @@
       "kg",
       "tx",
       "kw",
-      "wy"
+      "wy",
+      "mg"
     ],
     "quality": "128k",
     "samples": [
@@ -68,6 +72,15 @@
         "requested": true
       },
       {
+        "platform": "mg",
+        "quality": "128k",
+        "name": "稻香",
+        "singer": "周杰伦",
+        "songId": "697066",
+        "index": 0,
+        "requested": false
+      },
+      {
         "platform": "kg",
         "quality": "128k",
         "name": "不死鸟",
@@ -87,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-12T23:10:44.954Z"
+    "testedAt": "2026-11-13T23:13:43.812Z"
   },
   "upstreams": [
     {
@@ -176,7 +189,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "92c082490216d4976ed5b7dc41874df3d08eaf23",
+      "commit": "6f3d87348e2fc29665e7d2b38201c996786b3678",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -190,7 +203,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "92c082490216d4976ed5b7dc41874df3d08eaf23",
+      "commit": "6f3d87348e2fc29665e7d2b38201c996786b3678",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -215,6 +228,13 @@
       "path": "lx-玉宁熙.js",
       "sha256": "2a9ed0de34d0c19ebf4b225cde3d9cba28599c238c9502c49be2c411b805bfad",
       "updatedAt": "2026-05-02T07:51:47Z"
+    },
+    {
+      "repository": "moxi5445/lx-music-cloud",
+      "commit": "17e29a3a00c1ad3ee8e875d537ed42599a5a15b8",
+      "path": "members/juhesource-stellarwave.js",
+      "sha256": "d186346cec8f813dc447bebcc4d5a29a5ad41f62c90102edb196d67cc870eaf2",
+      "updatedAt": "2026-11-13T23:06:34Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
