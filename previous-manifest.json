@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261113T231343812Z-e67f67e1e5bb",
-  "generatedAt": "2026-11-13T23:13:43.812Z",
+  "version": "20261114T215821151Z-d689f7aa470b",
+  "generatedAt": "2026-11-14T21:58:21.151Z",
   "source": {
-    "path": "sources/e67f67e1e5bbf37921dfe50b9988b047d4ab2cf688a897b931d2828fd5579a61.js",
-    "sha256": "e67f67e1e5bbf37921dfe50b9988b047d4ab2cf688a897b931d2828fd5579a61",
-    "sha1": "24bdd4b942ddeedcc1f9d454047e149171e0d17f",
-    "bytes": 3450748
+    "path": "sources/d689f7aa470b04d50ccb260a348716edb6591dda11eed9d577f617c4e2e07721.js",
+    "sha256": "d689f7aa470b04d50ccb260a348716edb6591dda11eed9d577f617c4e2e07721",
+    "sha1": "24352ab5210ef5dba59ca0b801345e0de0edc020",
+    "bytes": 3485633
   },
   "capabilities": {
     "kg": [
@@ -100,7 +100,7 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-13T23:13:43.812Z"
+    "testedAt": "2026-11-14T21:58:21.151Z"
   },
   "upstreams": [
     {
@@ -160,18 +160,18 @@
       "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
+      "repository": "moxi5445/lx-music-cloud",
+      "commit": "286c4595abb80a27e8b522434fc52088ccb48197",
+      "path": "members/lx-music-source-260925-43bec2.js",
+      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
+      "updatedAt": "2026-11-14T15:18:13Z"
+    },
+    {
       "repository": "ShaneLee-9/lx-music-source-merge",
       "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
       "path": "checked/HelloWorld音源(中秋快乐).js",
       "sha256": "32ff5f7b44c1d7d038cb548cb6fac0349befb538bdae26fb658684115e823427",
       "updatedAt": "2026-10-31T08:26:52Z"
-    },
-    {
-      "repository": "pdone/lx-music-source",
-      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
-      "path": "helloworld/latest.js",
-      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
-      "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
       "repository": "hwxlikemi/lxs",
@@ -189,7 +189,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "6f3d87348e2fc29665e7d2b38201c996786b3678",
+      "commit": "07a5824cd094ac467a7cab0816af52fee85a81bd",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -203,7 +203,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "6f3d87348e2fc29665e7d2b38201c996786b3678",
+      "commit": "07a5824cd094ac467a7cab0816af52fee85a81bd",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -231,10 +231,10 @@
     },
     {
       "repository": "moxi5445/lx-music-cloud",
-      "commit": "17e29a3a00c1ad3ee8e875d537ed42599a5a15b8",
-      "path": "members/juhesource-stellarwave.js",
-      "sha256": "d186346cec8f813dc447bebcc4d5a29a5ad41f62c90102edb196d67cc870eaf2",
-      "updatedAt": "2026-11-13T23:06:34Z"
+      "commit": "286c4595abb80a27e8b522434fc52088ccb48197",
+      "path": "members/jiexiangjuhesource.js",
+      "sha256": "a4f25710ea8c993e20626df2345fb933607eb4b91b794bd323f954e7085b94df",
+      "updatedAt": "2026-11-14T15:18:13Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
@@ -245,14 +245,14 @@
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "c6ebd72d2594cc24d63db923144f3bab6e5913b4",
+      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
       "path": "public/aya-source.js",
       "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
       "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "c6ebd72d2594cc24d63db923144f3bab6e5913b4",
+      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
       "path": "public/five-source-v16.js",
       "sha256": "58fd208e6f8df9dd40c571b2d33e926b74bee88328f6abe1e0e9d5a864ca1fd1",
       "updatedAt": "2026-11-05T20:04:36Z"
