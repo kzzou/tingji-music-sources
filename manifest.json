@@ -1,21 +1,18 @@
 {
   "schemaVersion": 1,
-  "version": "20261115T222735532Z-440aa674633d",
-  "generatedAt": "2026-11-15T22:27:35.532Z",
+  "version": "20261117T013130329Z-eb5f8339beff",
+  "generatedAt": "2026-11-17T01:31:30.329Z",
   "source": {
-    "path": "sources/440aa674633dc443539dfe59879699a42e3572ecb035a1f9337db9cb813f244c.js",
-    "sha256": "440aa674633dc443539dfe59879699a42e3572ecb035a1f9337db9cb813f244c",
-    "sha1": "f658e7ab7cbe74fd62e4a381045f91035f63d70f",
-    "bytes": 3281536
+    "path": "sources/eb5f8339beff2a15f760f432361bf08907316d6d7306db776cd7d130937442f8.js",
+    "sha256": "eb5f8339beff2a15f760f432361bf08907316d6d7306db776cd7d130937442f8",
+    "sha1": "4c78eda2b497c9eaf6a07b31ea09e1d1b8b451f5",
+    "bytes": 3256607
   },
   "capabilities": {
     "kg": [
       "128k"
     ],
     "tx": [
-      "128k"
-    ],
-    "kw": [
       "128k"
     ],
     "wy": [
@@ -29,7 +26,6 @@
     "platforms": [
       "kg",
       "tx",
-      "kw",
       "wy",
       "mg"
     ],
@@ -38,11 +34,11 @@
       {
         "platform": "kg",
         "quality": "128k",
-        "name": "知我",
-        "singer": "国风堂、哦漏",
-        "songId": 60542009,
-        "index": 0,
-        "requested": true
+        "name": "不死鸟",
+        "singer": "霍尊",
+        "songId": 84695837,
+        "index": 1,
+        "requested": false
       },
       {
         "platform": "wy",
@@ -65,11 +61,11 @@
       {
         "platform": "kg",
         "quality": "128k",
-        "name": "不死鸟",
-        "singer": "霍尊",
-        "songId": 84695837,
-        "index": 1,
-        "requested": false
+        "name": "知我",
+        "singer": "国风堂、哦漏",
+        "songId": 60542009,
+        "index": 0,
+        "requested": true
       },
       {
         "platform": "tx",
@@ -77,15 +73,6 @@
         "name": "Hello",
         "singer": "Adele",
         "songId": "002Il7Ya1tZ6UZ",
-        "index": 0,
-        "requested": false
-      },
-      {
-        "platform": "kw",
-        "quality": "128k",
-        "name": "天外来物",
-        "singer": "薛之谦",
-        "songId": "145389372",
         "index": 0,
         "requested": false
       },
@@ -100,22 +87,22 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-15T22:27:35.532Z"
+    "testedAt": "2026-11-17T01:31:30.329Z"
   },
   "upstreams": [
     {
-      "repository": "pdone/lx-music-source",
-      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
-      "path": "hyw/latest.js",
-      "sha256": "0f48bdab4205e4423397f970b926565085a5af4f3b8a8a19f4cdc0e755647cd5",
-      "updatedAt": "2026-10-29T04:57:19Z"
+      "repository": "cdyUuu/lx-music-xinghai-source",
+      "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
+      "path": "xinghai-music-sourcev2.3.12.js",
+      "sha256": "79beb3d75be7d7a6bcf72dd903a58524c9547c5c859648f3cca0c1d8e1fd2c97",
+      "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
-      "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
-      "path": "public/aya-source.js",
-      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
-      "updatedAt": "2026-11-05T20:52:00Z"
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
+      "path": "checked/独家音源-v7.js",
+      "sha256": "79a5c4703e060eaff6f8ffaac05d2fadf5e22b7729f6fe151d1cca2fa3935171",
+      "updatedAt": "2026-10-31T08:26:52Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
@@ -146,25 +133,11 @@
       "updatedAt": "2026-05-02T07:51:47Z"
     },
     {
-      "repository": "fengshgx/lxs",
-      "commit": "6a66a2731ab60e547ec4c0dc532ebdb2f88f2fe6",
-      "path": "wuming.js",
-      "sha256": "cd8f9bce986efdc492817f19bcee308820a1ca56849875b4d0b2be9909e54928",
-      "updatedAt": "2024-04-15T08:14:58Z"
-    },
-    {
-      "repository": "cdyUuu/lx-music-xinghai-source",
-      "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
-      "path": "xinghai-music-sourcev2.3.12.js",
-      "sha256": "79beb3d75be7d7a6bcf72dd903a58524c9547c5c859648f3cca0c1d8e1fd2c97",
-      "updatedAt": "2026-08-24T09:50:23Z"
-    },
-    {
-      "repository": "moxi5445/lx-music-cloud",
-      "commit": "cfbee74804ea8892e43fb704c211a521403aa062",
-      "path": "members/lx-music-source-260925-43bec2.js",
-      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
-      "updatedAt": "2026-11-15T15:17:10Z"
+      "repository": "pdone/lx-music-source",
+      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
+      "path": "hyw/latest.js",
+      "sha256": "0f48bdab4205e4423397f970b926565085a5af4f3b8a8a19f4cdc0e755647cd5",
+      "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
       "repository": "ShaneLee-9/lx-music-source-merge",
@@ -172,6 +145,13 @@
       "path": "checked/HelloWorld音源(中秋快乐).js",
       "sha256": "32ff5f7b44c1d7d038cb548cb6fac0349befb538bdae26fb658684115e823427",
       "updatedAt": "2026-10-31T08:26:52Z"
+    },
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
+      "path": "helloworld/latest.js",
+      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
+      "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
       "repository": "hwxlikemi/lxs",
@@ -189,7 +169,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "9b796b00d247ece71e5d6aa721cd175f05c294f8",
+      "commit": "fdde89a28e660dc7a076468651ebfdfab44b3f6e",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -203,7 +183,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "9b796b00d247ece71e5d6aa721cd175f05c294f8",
+      "commit": "fdde89a28e660dc7a076468651ebfdfab44b3f6e",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -213,13 +193,6 @@
       "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
       "path": "checked/Hei Music v2.2.1-fix.js",
       "sha256": "78d3cad4f64913358112edd71c4d32842048135b9105c36e76842a126a180ef2",
-      "updatedAt": "2026-10-31T08:26:52Z"
-    },
-    {
-      "repository": "ShaneLee-9/lx-music-source-merge",
-      "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
-      "path": "checked/独家音源-v7.js",
-      "sha256": "79a5c4703e060eaff6f8ffaac05d2fadf5e22b7729f6fe151d1cca2fa3935171",
       "updatedAt": "2026-10-31T08:26:52Z"
     },
     {
@@ -235,6 +208,13 @@
       "path": "V260907/lx-玉宁熙V1.2.2.js",
       "sha256": "9ddcc32f55ba1981166f16bf55c03c43165b098932208a5fb4c9c64192650f0c",
       "updatedAt": "2026-09-07T06:57:38Z"
+    },
+    {
+      "repository": "6m7924wnwt-oss/wow-origin",
+      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
+      "path": "public/aya-source.js",
+      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
+      "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
