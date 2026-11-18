@@ -1,18 +1,21 @@
 {
   "schemaVersion": 1,
-  "version": "20261117T013130329Z-eb5f8339beff",
-  "generatedAt": "2026-11-17T01:31:30.329Z",
+  "version": "20261118T003512845Z-28441b515db3",
+  "generatedAt": "2026-11-18T00:35:12.845Z",
   "source": {
-    "path": "sources/eb5f8339beff2a15f760f432361bf08907316d6d7306db776cd7d130937442f8.js",
-    "sha256": "eb5f8339beff2a15f760f432361bf08907316d6d7306db776cd7d130937442f8",
-    "sha1": "4c78eda2b497c9eaf6a07b31ea09e1d1b8b451f5",
-    "bytes": 3256607
+    "path": "sources/28441b515db31d2c3c2dfd450f79672ceda092edef05113668a2d3e8862509e3.js",
+    "sha256": "28441b515db31d2c3c2dfd450f79672ceda092edef05113668a2d3e8862509e3",
+    "sha1": "649e86b35504c841974461583f8dcc76b9d984d6",
+    "bytes": 3293052
   },
   "capabilities": {
     "kg": [
       "128k"
     ],
     "tx": [
+      "128k"
+    ],
+    "kw": [
       "128k"
     ],
     "wy": [
@@ -26,38 +29,12 @@
     "platforms": [
       "kg",
       "tx",
+      "kw",
       "wy",
       "mg"
     ],
     "quality": "128k",
     "samples": [
-      {
-        "platform": "kg",
-        "quality": "128k",
-        "name": "不死鸟",
-        "singer": "霍尊",
-        "songId": 84695837,
-        "index": 1,
-        "requested": false
-      },
-      {
-        "platform": "wy",
-        "quality": "128k",
-        "name": "知我",
-        "singer": "国风堂、哦漏",
-        "songId": 1394167216,
-        "index": 0,
-        "requested": true
-      },
-      {
-        "platform": "mg",
-        "quality": "128k",
-        "name": "稻香",
-        "singer": "周杰伦",
-        "songId": "697066",
-        "index": 0,
-        "requested": false
-      },
       {
         "platform": "kg",
         "quality": "128k",
@@ -77,6 +54,42 @@
         "requested": false
       },
       {
+        "platform": "kw",
+        "quality": "128k",
+        "name": "天外来物",
+        "singer": "薛之谦",
+        "songId": "145389372",
+        "index": 0,
+        "requested": false
+      },
+      {
+        "platform": "wy",
+        "quality": "128k",
+        "name": "知我",
+        "singer": "国风堂、哦漏",
+        "songId": 1394167216,
+        "index": 0,
+        "requested": true
+      },
+      {
+        "platform": "kg",
+        "quality": "128k",
+        "name": "不死鸟",
+        "singer": "霍尊",
+        "songId": 84695837,
+        "index": 1,
+        "requested": false
+      },
+      {
+        "platform": "mg",
+        "quality": "128k",
+        "name": "稻香",
+        "singer": "周杰伦",
+        "songId": "697066",
+        "index": 0,
+        "requested": false
+      },
+      {
         "platform": "wy",
         "quality": "128k",
         "name": "晴天",
@@ -87,22 +100,22 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-17T01:31:30.329Z"
+    "testedAt": "2026-11-18T00:35:12.845Z"
   },
   "upstreams": [
-    {
-      "repository": "cdyUuu/lx-music-xinghai-source",
-      "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
-      "path": "xinghai-music-sourcev2.3.12.js",
-      "sha256": "79beb3d75be7d7a6bcf72dd903a58524c9547c5c859648f3cca0c1d8e1fd2c97",
-      "updatedAt": "2026-08-24T09:50:23Z"
-    },
     {
       "repository": "ShaneLee-9/lx-music-source-merge",
       "commit": "cbc158d7d2973b39b086a8b753eb05ae2efadcb1",
       "path": "checked/独家音源-v7.js",
       "sha256": "79a5c4703e060eaff6f8ffaac05d2fadf5e22b7729f6fe151d1cca2fa3935171",
       "updatedAt": "2026-10-31T08:26:52Z"
+    },
+    {
+      "repository": "cdyUuu/lx-music-xinghai-source",
+      "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
+      "path": "xinghai-music-sourcev2.3.12.js",
+      "sha256": "79beb3d75be7d7a6bcf72dd903a58524c9547c5c859648f3cca0c1d8e1fd2c97",
+      "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
@@ -133,11 +146,18 @@
       "updatedAt": "2026-05-02T07:51:47Z"
     },
     {
+      "repository": "fengshgx/lxs",
+      "commit": "6a66a2731ab60e547ec4c0dc532ebdb2f88f2fe6",
+      "path": "wuming.js",
+      "sha256": "cd8f9bce986efdc492817f19bcee308820a1ca56849875b4d0b2be9909e54928",
+      "updatedAt": "2024-04-15T08:14:58Z"
+    },
+    {
       "repository": "pdone/lx-music-source",
       "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
-      "path": "hyw/latest.js",
-      "sha256": "0f48bdab4205e4423397f970b926565085a5af4f3b8a8a19f4cdc0e755647cd5",
-      "updatedAt": "2026-10-29T04:57:19Z"
+      "path": "feichangdao/latest.js",
+      "sha256": "49486cab064e64d5ad63723e670c44ee55eadadcc790ccf493351fbde64284d7",
+      "updatedAt": "2026-11-08T06:47:37Z"
     },
     {
       "repository": "ShaneLee-9/lx-music-source-merge",
@@ -169,7 +189,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "fdde89a28e660dc7a076468651ebfdfab44b3f6e",
+      "commit": "0da10eed1804266403891f5272600b7c148c38ae",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -183,7 +203,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "fdde89a28e660dc7a076468651ebfdfab44b3f6e",
+      "commit": "0da10eed1804266403891f5272600b7c148c38ae",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
