@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261118T235403162Z-df36814aa82f",
-  "generatedAt": "2026-11-18T23:54:03.162Z",
+  "version": "20261120T001631903Z-913a5e094203",
+  "generatedAt": "2026-11-20T00:16:31.903Z",
   "source": {
-    "path": "sources/df36814aa82f4b9b4de876616e58ec163db259e7ce778b03103ab274ec823aaf.js",
-    "sha256": "df36814aa82f4b9b4de876616e58ec163db259e7ce778b03103ab274ec823aaf",
-    "sha1": "2ed96a02acc924429b66ba8a4eba3c805bed6a8f",
-    "bytes": 3197929
+    "path": "sources/913a5e0942034e36af8a8f23841412977527f6e1bb71d74b60abcd78624d8ecc.js",
+    "sha256": "913a5e0942034e36af8a8f23841412977527f6e1bb71d74b60abcd78624d8ecc",
+    "sha1": "18fb7ad05a430b52dad5612f530cfbf46c327dbd",
+    "bytes": 2212283
   },
   "capabilities": {
     "kg": [
@@ -88,19 +88,10 @@
         "songId": "697066",
         "index": 0,
         "requested": false
-      },
-      {
-        "platform": "wy",
-        "quality": "128k",
-        "name": "晴天",
-        "singer": "周杰伦",
-        "songId": 186016,
-        "index": 1,
-        "requested": false
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-18T23:54:03.162Z"
+    "testedAt": "2026-11-20T00:16:31.903Z"
   },
   "upstreams": [
     {
@@ -160,13 +151,6 @@
       "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
-      "repository": "pdone/lx-music-source",
-      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
-      "path": "feichangdao/latest.js",
-      "sha256": "49486cab064e64d5ad63723e670c44ee55eadadcc790ccf493351fbde64284d7",
-      "updatedAt": "2026-11-08T06:47:37Z"
-    },
-    {
       "repository": "ShaneLee-9/lx-music-source-merge",
       "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
       "path": "checked/HelloWorld音源(中秋快乐).js",
@@ -188,15 +172,8 @@
       "updatedAt": "2026-05-02T07:51:47Z"
     },
     {
-      "repository": "ShaneLee-9/lx-music-source-merge",
-      "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
-      "path": "checked/轻量音源_多源并行（酷我哇网易云无损+其他mp3）.js",
-      "sha256": "f5d589c4ebe583800b25fe12e35dfd4f807f1758bfbea83054df4b9a4f95aa29",
-      "updatedAt": "2026-11-18T01:57:38Z"
-    },
-    {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "4fd0e4e7e27158fbca8f1150ff8552fb0b76022b",
+      "commit": "5f1de956b0353584f873cd5d3f825df6024122ad",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -210,7 +187,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "4fd0e4e7e27158fbca8f1150ff8552fb0b76022b",
+      "commit": "5f1de956b0353584f873cd5d3f825df6024122ad",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
@@ -221,6 +198,20 @@
       "path": "lx-玉宁熙.js",
       "sha256": "2a9ed0de34d0c19ebf4b225cde3d9cba28599c238c9502c49be2c411b805bfad",
       "updatedAt": "2026-05-02T07:51:47Z"
+    },
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
+      "path": "jiexiang/latest.js",
+      "sha256": "a4f25710ea8c993e20626df2345fb933607eb4b91b794bd323f954e7085b94df",
+      "updatedAt": "2026-10-29T04:57:19Z"
+    },
+    {
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
+      "path": "checked/(推荐)裤佬SVIP音源（酷狗挂了）.js",
+      "sha256": "7ba2ca2c4b5ec2b0931f1a4f7f542a19e844f40f2765b661d0aee3b38e63ad4a",
+      "updatedAt": "2026-10-08T07:53:23Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
@@ -242,13 +233,6 @@
       "path": "public/five-source-v16.js",
       "sha256": "58fd208e6f8df9dd40c571b2d33e926b74bee88328f6abe1e0e9d5a864ca1fd1",
       "updatedAt": "2026-11-05T20:04:36Z"
-    },
-    {
-      "repository": "pdone/lx-music-source",
-      "commit": "ed8328dbd1a77aee3ee0116d835eb9d907eeaad2",
-      "path": "fish/latest.js",
-      "sha256": "a711e152c4f28c32fd46b38839a70f476e0b669905773a90e2ce63246136af47",
-      "updatedAt": "2026-10-29T04:57:19Z"
     }
   ]
 }
