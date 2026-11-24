@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261122T231139304Z-14b9c0291fe8",
-  "generatedAt": "2026-11-22T23:11:39.304Z",
+  "version": "20261124T034742001Z-ba4d7c9b517f",
+  "generatedAt": "2026-11-24T03:47:42.001Z",
   "source": {
-    "path": "sources/14b9c0291fe8e47eab6fc5d703ac99e11c9703f98ea83eda7e838a3d8bb75edc.js",
-    "sha256": "14b9c0291fe8e47eab6fc5d703ac99e11c9703f98ea83eda7e838a3d8bb75edc",
-    "sha1": "0a7def02b99a857ba56a54aaa34810db51a90c75",
-    "bytes": 3434308
+    "path": "sources/ba4d7c9b517f049eace0dc68098d485889856536d9962a6cdd4963d201b5d236.js",
+    "sha256": "ba4d7c9b517f049eace0dc68098d485889856536d9962a6cdd4963d201b5d236",
+    "sha1": "9545c52a45da956e7e2ef68a69d9f1f59c7e3a7b",
+    "bytes": 3075073
   },
   "capabilities": {
     "tx": [
@@ -17,13 +17,17 @@
     ],
     "wy": [
       "128k"
+    ],
+    "mg": [
+      "128k"
     ]
   },
   "verification": {
     "platforms": [
       "tx",
       "kw",
-      "wy"
+      "wy",
+      "mg"
     ],
     "quality": "128k",
     "samples": [
@@ -55,6 +59,15 @@
         "requested": true
       },
       {
+        "platform": "mg",
+        "quality": "128k",
+        "name": "稻香",
+        "singer": "周杰伦",
+        "songId": "697066",
+        "index": 0,
+        "requested": false
+      },
+      {
         "platform": "wy",
         "quality": "128k",
         "name": "晴天",
@@ -65,15 +78,22 @@
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-22T23:11:39.304Z"
+    "testedAt": "2026-11-24T03:47:42.001Z"
   },
   "upstreams": [
     {
-      "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
-      "path": "public/aya-source.js",
-      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
-      "updatedAt": "2026-11-05T20:52:00Z"
+      "repository": "moxi5445/lx-music-cloud",
+      "commit": "259918606a5081a5b01042ff17d07e9b9e5c4ac6",
+      "path": "members/jiexiangjuhesource.js",
+      "sha256": "46a151119f72e2b04e7fa1a42baf2208f82be5d94c0c1b580eab5b23e754149d",
+      "updatedAt": "2026-11-23T15:19:21Z"
+    },
+    {
+      "repository": "moxi5445/lx-music-cloud",
+      "commit": "259918606a5081a5b01042ff17d07e9b9e5c4ac6",
+      "path": "members/shouji-juheapi-lx.js",
+      "sha256": "cd4b68b133ef8de80a75ac6f9c5d9c80b383e1fe3c364f4366553d18ca9418a5",
+      "updatedAt": "2026-11-23T23:08:39Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
@@ -111,13 +131,6 @@
       "updatedAt": "2024-04-15T08:14:58Z"
     },
     {
-      "repository": "pdone/lx-music-source",
-      "commit": "07dca9589e3734b140ec4ef396ee29dfe63687a2",
-      "path": "feichangdao/latest.js",
-      "sha256": "49486cab064e64d5ad63723e670c44ee55eadadcc790ccf493351fbde64284d7",
-      "updatedAt": "2026-11-08T06:47:37Z"
-    },
-    {
       "repository": "cdyUuu/lx-music-xinghai-source",
       "commit": "5d9d00f5804cdde0bf38fc68a8bd4677d351797f",
       "path": "xinghai-music-sourcev2.3.12.js",
@@ -125,18 +138,18 @@
       "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
-      "repository": "moxi5445/lx-music-cloud",
-      "commit": "5eca07f2dbb92c72774cb4d826726890282fdd3b",
-      "path": "members/fuguang-music-helloworldsource-e093f5.js",
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
+      "path": "checked/HelloWorld音源(中秋快乐).js",
       "sha256": "32ff5f7b44c1d7d038cb548cb6fac0349befb538bdae26fb658684115e823427",
-      "updatedAt": "2026-11-22T05:15:14Z"
+      "updatedAt": "2026-10-31T08:26:52Z"
     },
     {
       "repository": "pdone/lx-music-source",
       "commit": "07dca9589e3734b140ec4ef396ee29dfe63687a2",
-      "path": "helloworld/latest.js",
-      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
-      "updatedAt": "2026-10-29T04:57:19Z"
+      "path": "xinghai/latest.js",
+      "sha256": "d2f72c5c0dde51fbaa32c9ca5c634a1ae43eafa952abc1e5a83dab4f578487ab",
+      "updatedAt": "2026-11-08T06:47:37Z"
     },
     {
       "repository": "hwxlikemi/lxs",
@@ -154,7 +167,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "24ebed63bd5d73810ce6e294db2c85f5043fa163",
+      "commit": "1c30d490ffdf7eb5798f22d954aea07fa27ea667",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -168,31 +181,10 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "24ebed63bd5d73810ce6e294db2c85f5043fa163",
+      "commit": "1c30d490ffdf7eb5798f22d954aea07fa27ea667",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
-    },
-    {
-      "repository": "hwxlikemi/lxs",
-      "commit": "8df82375284b4725d8bfa9c6e8d3230f1c40f735",
-      "path": "lx-玉宁熙.js",
-      "sha256": "2a9ed0de34d0c19ebf4b225cde3d9cba28599c238c9502c49be2c411b805bfad",
-      "updatedAt": "2026-05-02T07:51:47Z"
-    },
-    {
-      "repository": "moxi5445/lx-music-cloud",
-      "commit": "f354d974c5f68ab6012278a6300a038717fecc00",
-      "path": "members/jiexiangjuhesource.js",
-      "sha256": "46a151119f72e2b04e7fa1a42baf2208f82be5d94c0c1b580eab5b23e754149d",
-      "updatedAt": "2026-11-21T05:11:31Z"
-    },
-    {
-      "repository": "ShaneLee-9/lx-music-source-merge",
-      "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
-      "path": "checked/(推荐)裤佬SVIP音源（酷狗挂了）.js",
-      "sha256": "7ba2ca2c4b5ec2b0931f1a4f7f542a19e844f40f2765b661d0aee3b38e63ad4a",
-      "updatedAt": "2026-10-08T07:53:23Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
@@ -200,6 +192,13 @@
       "path": "V260907/lx-玉宁熙V1.2.2.js",
       "sha256": "9ddcc32f55ba1981166f16bf55c03c43165b098932208a5fb4c9c64192650f0c",
       "updatedAt": "2026-09-07T06:57:38Z"
+    },
+    {
+      "repository": "6m7924wnwt-oss/wow-origin",
+      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
+      "path": "public/aya-source.js",
+      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
+      "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
