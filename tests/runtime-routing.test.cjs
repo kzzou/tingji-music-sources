@@ -27,9 +27,10 @@ function harness(rows, { timeoutMs = 8000, headStatus = 200 } = {}) {
     }
     time = to;
   }
-  const sources = { kg: { type: 'music', actions: ['musicUrl'], qualitys: ['128k'] } };
+  const entry = { type: 'music', actions: ['musicUrl'], qualitys: ['128k', '320k'] };
+  const sources = { kg: entry, kw: entry };
   const inputs = rows.map(({ name, body, group }) => ({
-    id: name, endpointGroup: group, verifiedCapabilities: { kg: ['128k'] },
+    id: name, endpointGroup: group, verifiedCapabilities: { kg: entry.qualitys, kw: entry.qualitys },
     rawCode: '/*!\n * @name ' + name + '\n */\n' +
       'lx.on("request", async input => { const song = input.info.musicInfo.id;' +
       'globalThis.hits.push([' + JSON.stringify(name) + ', song, Date.now()]);' + body + '});' +
@@ -40,13 +41,16 @@ function harness(rows, { timeoutMs = 8000, headStatus = 200 } = {}) {
     lx: {
       EVENT_NAMES: { request: 'request', inited: 'inited' },
       on(_event, fn) { handler = fn; }, send() {},
-      request(_url, _options, reply) {
-        reply(null, { statusCode: headStatus, headers: { 'content-type': 'audio/mpeg' } });
+      request(url, _options, reply) {
+        const status = typeof headStatus === 'function' ? headStatus(url) : headStatus;
+        reply(null, { statusCode: status, headers: { 'content-type': 'audio/mpeg' } });
         return () => {};
       },
     },
   });
-  const play = song => handler({ action: 'musicUrl', source: 'kg', info: { type: '128k', musicInfo: { id: song } } });
+  const play = (song, platform = 'kg', quality = '128k') => handler({
+    action: 'musicUrl', source: platform, info: { type: quality, musicInfo: { id: song } },
+  });
   return { advance, hits, play };
 }
 
@@ -74,7 +78,7 @@ test('a second track can use an idle provider while a stalled track occupies the
 
 test('three simultaneous songs share a sole provider in order without overlapping its handler', async () => {
   const runner = harness([{ name: 'only', body: 'await new Promise(resolve => setTimeout(resolve, 900)); ' + valid }]);
-  const playback = Promise.all(['a', 'b', 'c'].map(runner.play));
+  const playback = Promise.all(['a', 'b', 'c'].map(song => runner.play(song)));
   await runner.advance(3000);
   assert.deepEqual(runner.hits.map(([, song, start]) => [song, start]), [['a', 0], ['b', 900], ['c', 1800]]);
   assert.deepEqual(await playback, [media, media, media]);
@@ -97,4 +101,52 @@ test('a transiently cooling sole group can recover immediately and a HEAD 405 pr
   await assert.rejects(runner.play('a'), /absent/);
   await assert.rejects(runner.play('b'), /absent/);
   assert.equal(await runner.play('available'), media);
+});
+
+const providerUrl = (name, url) => ({ name, body: 'return ' + JSON.stringify(url) + ';' });
+const primaryUrl = 'https://cdn.invalid/music/one?sig=a';
+const duplicateUrl = 'https://CDN.invalid:443/music/two?sig=b';
+const otherUrl = 'https://other-cdn.invalid/music/one?sig=c';
+
+test('a quick re-resolution tries another group, skips its duplicate media hostname and delivers a distinct hostname', async () => {
+  const runner = harness([
+    providerUrl('primary', primaryUrl), providerUrl('alias', duplicateUrl), providerUrl('alternate', otherUrl),
+  ]);
+  assert.equal(await runner.play('sample'), primaryUrl);
+  assert.equal(await runner.play('sample'), otherUrl);
+  assert.deepEqual(runner.hits.map(([name]) => name), ['primary', 'alias', 'alternate']);
+  assert.equal(await runner.play('another'), primaryUrl);
+  assert.equal(await runner.play('sample', 'kw'), primaryUrl);
+  assert.equal(await runner.play('sample', 'kg', '320k'), primaryUrl);
+  await runner.advance(90001);
+  assert.equal(await runner.play('sample'), primaryUrl);
+});
+
+test('a distinct CDN declining HEAD outranks a previously handed out host, and a sole valid host is reusable', async () => {
+  const runner = harness([
+    providerUrl('primary', primaryUrl), providerUrl('alias', duplicateUrl), providerUrl('other', otherUrl),
+  ], { headStatus: url => url === otherUrl ? 405 : 200 });
+  assert.equal(await runner.play('one'), primaryUrl);
+  assert.equal(await runner.play('one'), otherUrl);
+  const only = harness([providerUrl('a', primaryUrl), providerUrl('alias', duplicateUrl)]);
+  assert.equal(await only.play('one'), primaryUrl);
+  assert.equal(await only.play('one'), duplicateUrl);
+  const sole = harness([providerUrl('a', primaryUrl)], { headStatus: 501 });
+  assert.equal(await sole.play('one'), primaryUrl);
+  assert.equal(await sole.play('one'), primaryUrl);
+});
+
+test('concurrent requests for the same song use a fresh delivery when their first results point to one CDN', async () => {
+  const runner = harness([
+    providerUrl('first', primaryUrl), providerUrl('shared', duplicateUrl), providerUrl('fresh', otherUrl),
+  ]);
+  const results = await Promise.all([runner.play('one'), runner.play('one')]);
+  assert.deepEqual(results.sort(), [primaryUrl, otherUrl].sort());
+});
+
+test('retry history evicts an old song after 64 distinct newer deliveries', async () => {
+  const runner = harness([providerUrl('primary', primaryUrl), providerUrl('alternate', otherUrl)]);
+  assert.equal(await runner.play('target'), primaryUrl);
+  for (let i = 0; i < 64; i++) await runner.play('other-' + i);
+  assert.equal(await runner.play('target'), primaryUrl);
 });
