@@ -109,6 +109,33 @@ test('fixture platform selection excludes absent and wrongly mapped platform IDs
   assert.deepEqual(fixturePlatforms({ kg: { modern: { source: 'kg', meta: { songId: 1 } }, legacy: {} }, tx: [{ modern: { source: 'tx', meta: { songId: 'mid' } }, legacy: {} }], wy: { modern: { source: 'kg', meta: { songId: 2 } }, legacy: {} } }), ['kg', 'tx']);
 });
 
+test('aggregate first rechecks the passing fallback when none of the included providers played the first song', async t => {
+  const directory = temporary();
+  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  const fallback = { ...success('kg'), sample: { name: 'Passing fallback', songId: 'kg-second', index: 1 } };
+  const calls = [];
+  const result = await validateAggregate([candidate(0, { verification: fallback })], directory, '/input/platforms.json', {}, async (_file, platform, _fixtures, index) => {
+    calls.push(index);
+    return index === 1 ? fallback : { platform, resolveError: 'unavailable' };
+  });
+  assert.deepEqual(calls, [1]);
+  assert.deepEqual(result.manifest.verification.aggregateSamples, [{ platform: 'kg', quality: '128k', ...fallback.sample }]);
+});
+
+test('within equal song coverage the faster passing attempt takes priority, even after a slow first sample', async () => {
+  const proof = elapsedMs => ({ ...success('kg'), sample: { index: 1 }, attempts: [{ sample: { index: 0 }, elapsedMs: 8000 }, { sample: { index: 1 }, elapsedMs }] });
+  const rows = [candidate(0, { verification: proof(7000) }), candidate(1, { verification: proof(800), rawCode: source.replace('song.mp3', 'fast.mp3') })];
+  let handler;
+  const host = {
+    EVENT_NAMES: { request: 'request', inited: 'inited' },
+    on(_event, fn) { handler = fn; }, send() {},
+    request(_url, _options, cb) { cb(null, { statusCode: 200, headers: { 'content-type': 'audio/mpeg' } }); return () => {}; },
+  };
+  vm.runInNewContext(compileVerified(rows).script, { lx: host, setTimeout, clearTimeout }, { timeout: 1000 });
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(await handler({ source: 'kg', action: 'musicUrl', info: { type: '128k', musicInfo: { id: 'track' } } }), 'https://example.test/fast.mp3');
+});
+
 test('exhausted overall validation budget stops scheduling more provider executions', async () => {
   const directory = temporary();
   let calls = 0;

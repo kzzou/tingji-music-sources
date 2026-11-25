@@ -49,7 +49,8 @@ async function mapLimit(items, maximum, worker) {
 
 function runProbe(file, platform = 'kg', fixtureFile = path.join(root, 'fixtures/platforms.json'), sampleIndex) {
   return new Promise(resolve => {
-    const child = spawn(process.execPath, ['--max-old-space-size=192', path.join(root, 'lib/probe.cjs'), file, platform, 'modern', fixtureFile, sampleIndex === undefined ? 'auto' : String(sampleIndex)], {
+    const profile = /^aggregate-\d+\.js$/.test(path.basename(file)) ? 'aggregate' : 'candidate';
+    const child = spawn(process.execPath, ['--max-old-space-size=192', path.join(root, 'lib/probe.cjs'), file, platform, 'modern', fixtureFile, sampleIndex === undefined ? 'auto' : String(sampleIndex), profile], {
       env: { PATH: process.env.PATH || '', CI: 'true', GITHUB_ACTIONS: 'true', TZ: 'UTC', SYSTEMROOT: process.env.SYSTEMROOT || '' },
       cwd: path.dirname(file), windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
     });
@@ -116,14 +117,20 @@ async function validateAggregate(candidates, temp, fixtureFile, diagnostics, pro
     const file = path.join(temp, `aggregate-${round}.js`);
     fs.writeFileSync(file, result.script);
     const reports = await mapLimit(Object.keys(result.manifest.capabilities), PROBE_CONCURRENCY, async platform => {
-      const first = await probe(file, platform, fixtureFile);
+      // Recheck a song that actually passed for a provider included in this bundle.
+      const evidence = result.manifest.verification.samples.filter(sample => sample.platform === platform);
+      evidence.sort((a, b) => Number(b.requested === true) - Number(a.requested === true) || (a.index ?? 0) - (b.index ?? 0));
+      const first = await probe(file, platform, fixtureFile, evidence[0]?.index);
       // A transient first winner failure must not discard other individually
       // verified fallbacks without a second attempt of the complete bundle.
       return audioVerified(first) ? first : probe(file, platform, fixtureFile);
     });
     diagnostics.aggregate.push({ round, reports });
     const allowedCapabilities = capabilitiesFor(reports);
-    if (Object.keys(allowedCapabilities).length === Object.keys(result.manifest.capabilities).length) return result;
+    if (Object.keys(allowedCapabilities).length === Object.keys(result.manifest.capabilities).length) {
+      result.manifest.verification.aggregateSamples = reports.map(({ platform, quality, sample }) => ({ platform, quality, ...sample }));
+      return result;
+    }
     if (!Object.keys(allowedCapabilities).length) return null;
     result = compileVerified(candidates, date, { allowedCapabilities });
   }
