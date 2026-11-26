@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261125T094228532Z-8466f858ad3e",
-  "generatedAt": "2026-11-25T09:42:28.532Z",
+  "version": "20261125T094819478Z-24be18963da4",
+  "generatedAt": "2026-11-25T09:48:19.478Z",
   "source": {
-    "path": "sources/8466f858ad3ea865d3d5de898546862dc40c751c4cf2db72e85b20d2f0ed40dc.js",
-    "sha256": "8466f858ad3ea865d3d5de898546862dc40c751c4cf2db72e85b20d2f0ed40dc",
-    "sha1": "16a7e604f05dff5ae5d95c1d70d4e22bf00a1055",
-    "bytes": 2138596
+    "path": "sources/24be18963da455929ffe6ed09a731f552e20506c7564b8b945aed207ab9bc958.js",
+    "sha256": "24be18963da455929ffe6ed09a731f552e20506c7564b8b945aed207ab9bc958",
+    "sha1": "80d3187b95952606385d3c0886fc26103c28f516",
+    "bytes": 2140504
   },
   "capabilities": {
     "kg": [
@@ -79,19 +79,10 @@
         "songId": "697066",
         "index": 0,
         "requested": false
-      },
-      {
-        "platform": "wy",
-        "quality": "128k",
-        "name": "晴天",
-        "singer": "周杰伦",
-        "songId": 186016,
-        "index": 1,
-        "requested": false
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-25T09:42:28.532Z",
+    "testedAt": "2026-11-25T09:48:19.478Z",
     "aggregateSamples": [
       {
         "platform": "kg",
