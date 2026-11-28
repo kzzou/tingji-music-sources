@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "version": "20261127T013041642Z-ed025ef27b79",
-  "generatedAt": "2026-11-27T01:30:41.642Z",
+  "version": "20261128T010314143Z-a114beaca027",
+  "generatedAt": "2026-11-28T01:03:14.143Z",
   "source": {
-    "path": "sources/ed025ef27b793dbdb1824690284cbc5f083ee345e4b8d0f58162e2fbca892b3f.js",
-    "sha256": "ed025ef27b793dbdb1824690284cbc5f083ee345e4b8d0f58162e2fbca892b3f",
-    "sha1": "3f1abc04e18d2a9566cb2f660b01796ffa91a1e3",
-    "bytes": 4154514
+    "path": "sources/a114beaca02781dc4a6ae7f3917bd4b27567b226bb2a90ded9e34b27b5da6275.js",
+    "sha256": "a114beaca02781dc4a6ae7f3917bd4b27567b226bb2a90ded9e34b27b5da6275",
+    "sha1": "8f06849a79b636bce64a69e90877cda4ceef0d66",
+    "bytes": 4252540
   },
   "capabilities": {
     "kg": [
@@ -63,15 +63,6 @@
         "requested": true
       },
       {
-        "platform": "mg",
-        "quality": "128k",
-        "name": "稻香",
-        "singer": "周杰伦",
-        "songId": "697066",
-        "index": 0,
-        "requested": false
-      },
-      {
         "platform": "tx",
         "quality": "128k",
         "name": "Hello",
@@ -88,10 +79,19 @@
         "songId": 186016,
         "index": 1,
         "requested": false
+      },
+      {
+        "platform": "mg",
+        "quality": "128k",
+        "name": "稻香",
+        "singer": "周杰伦",
+        "songId": "697066",
+        "index": 0,
+        "requested": false
       }
     ],
     "check": "musicUrl + HTTP GET audio magic",
-    "testedAt": "2026-11-27T01:30:41.642Z",
+    "testedAt": "2026-11-28T01:03:14.143Z",
     "aggregateSamples": [
       {
         "platform": "kg",
@@ -149,6 +149,13 @@
       "updatedAt": "2026-08-24T09:50:23Z"
     },
     {
+      "repository": "6m7924wnwt-oss/wow-origin",
+      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
+      "path": "public/aya-source.js",
+      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
+      "updatedAt": "2026-11-05T20:52:00Z"
+    },
+    {
       "repository": "moxi5445/lx-music-cloud",
       "commit": "259918606a5081a5b01042ff17d07e9b9e5c4ac6",
       "path": "members/shouji-juheapi-lx.js",
@@ -163,6 +170,13 @@
       "updatedAt": "2026-10-26T14:16:41Z"
     },
     {
+      "repository": "Macrohard0001/lx-ikun-music-sources",
+      "commit": "d96e1df6738bc067abaee97bcc5d81b4a7bcf0ad",
+      "path": "v260211/0.特别关注（公益版音源）/ikun音源[公益版]v24.js",
+      "sha256": "0cdf7b661eaf990963ddb29e0278b145bbc5e5baf9bd675f0694267467475c46",
+      "updatedAt": "2026-02-11T11:34:10Z"
+    },
+    {
       "repository": "hwxlikemi/lxs",
       "commit": "8df82375284b4725d8bfa9c6e8d3230f1c40f735",
       "path": "统一音乐源.js",
@@ -170,11 +184,25 @@
       "updatedAt": "2026-05-02T07:51:47Z"
     },
     {
+      "repository": "pdone/lx-music-source",
+      "commit": "65d3b23c0ba356cb3117979a53493ab9f7473c46",
+      "path": "feichangdao/latest.js",
+      "sha256": "49486cab064e64d5ad63723e670c44ee55eadadcc790ccf493351fbde64284d7",
+      "updatedAt": "2026-11-08T06:47:37Z"
+    },
+    {
       "repository": "ShaneLee-9/lx-music-source-merge",
       "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
       "path": "checked/HelloWorld音源(中秋快乐).js",
       "sha256": "32ff5f7b44c1d7d038cb548cb6fac0349befb538bdae26fb658684115e823427",
       "updatedAt": "2026-10-31T08:26:52Z"
+    },
+    {
+      "repository": "pdone/lx-music-source",
+      "commit": "65d3b23c0ba356cb3117979a53493ab9f7473c46",
+      "path": "helloworld/latest.js",
+      "sha256": "12d7a289647b4f4ff8b94d4b27d06a55b7ca9b9be6ac89c602cac2052eced723",
+      "updatedAt": "2026-10-29T04:57:19Z"
     },
     {
       "repository": "moophy/lx-music-source",
@@ -192,7 +220,7 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "e2b375e1a4961fdea20364220d7deb81d34dafca",
+      "commit": "d377f41cf69ad6a793d90b081086add7e1aab8fe",
       "path": "qdy/latest.js",
       "sha256": "213f73232562b528826dd97601e74212b517014e06fd614b28d8d8aa0dda400c",
       "updatedAt": "2026-09-14T02:45:34Z"
@@ -206,17 +234,17 @@
     },
     {
       "repository": "ycy119744220/lx-music-source",
-      "commit": "e2b375e1a4961fdea20364220d7deb81d34dafca",
+      "commit": "d377f41cf69ad6a793d90b081086add7e1aab8fe",
       "path": "xinghai/latest.js",
       "sha256": "807d6157e4fd7cdd05b8727efd73778b54a3b05a0b5e4c6bb28dedc0668e94e9",
       "updatedAt": "2026-10-19T13:57:54Z"
     },
     {
-      "repository": "moxi5445/lx-music-cloud",
-      "commit": "3ce0451037b5ff03e7bdaab314d1b4b3bbc23273",
-      "path": "members/jiexiangjuhesource.js",
-      "sha256": "46a151119f72e2b04e7fa1a42baf2208f82be5d94c0c1b580eab5b23e754149d",
-      "updatedAt": "2026-11-26T15:21:35Z"
+      "repository": "ShaneLee-9/lx-music-source-merge",
+      "commit": "e5146bc8e9df93b0fc4d1701c512781e4f80ea33",
+      "path": "checked/(推荐)裤佬SVIP音源（酷狗挂了）.js",
+      "sha256": "7ba2ca2c4b5ec2b0931f1a4f7f542a19e844f40f2765b661d0aee3b38e63ad4a",
+      "updatedAt": "2026-10-08T07:53:23Z"
     },
     {
       "repository": "guoyue2010/lxmusic-",
@@ -224,13 +252,6 @@
       "path": "V260907/lx-玉宁熙V1.2.2.js",
       "sha256": "9ddcc32f55ba1981166f16bf55c03c43165b098932208a5fb4c9c64192650f0c",
       "updatedAt": "2026-09-07T06:57:38Z"
-    },
-    {
-      "repository": "6m7924wnwt-oss/wow-origin",
-      "commit": "8d1988bbeb815599a2ea140c4cc304371875f280",
-      "path": "public/aya-source.js",
-      "sha256": "4d312d0da7ce0332888ccc0284f66f3d4bdf9a564af244a1bb83ab40c9cc09e3",
-      "updatedAt": "2026-11-05T20:52:00Z"
     },
     {
       "repository": "6m7924wnwt-oss/wow-origin",
@@ -247,11 +268,11 @@
       "updatedAt": "2026-11-09T02:07:29Z"
     },
     {
-      "repository": "pdone/lx-music-source",
-      "commit": "65d3b23c0ba356cb3117979a53493ab9f7473c46",
-      "path": "fish/latest.js",
+      "repository": "moxi5445/lx-music-cloud",
+      "commit": "6beb0bd82b4d3d1b2c00b7d01857dad19ac02ea1",
+      "path": "members/fish-music.js",
       "sha256": "a711e152c4f28c32fd46b38839a70f476e0b669905773a90e2ce63246136af47",
-      "updatedAt": "2026-10-29T04:57:19Z"
+      "updatedAt": "2026-11-13T23:06:34Z"
     }
   ]
 }
